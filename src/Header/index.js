@@ -1,20 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import GuestInputForm from './GuestInputForm';
+
 const Header = (props) =>{
 
   return(
     <header>
       <h1>RSVP</h1>
-      <form onSubmit={props.newGuestSubmitHandler}>
-          <input
-            type="text"
-            placeholder="Invite Someone"
-            value={props.pendingGuest}
-            onChange={props.handleNameInput}
-          />
-          <button type="submit" name="submit" value="submit">Submit</button>
-      </form>
+      <GuestInputForm
+        newGuestSubmitHandler={props.newGuestSubmitHandler}
+        pendingGuest={props.pendingGuest}
+        handleNameInput={props.handleNameInput}
+      />
     </header>
   );
 
